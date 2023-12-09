@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <SCript>
+        let days_attendance = Number(prompt("Enter the the number of days present"));
+
+        let attendence_percentage = days_attendance * 100 / 120;
+
+        if (attendence_percentage >= 70) {
+
+            let dues = prompt("All your dues are clear?");
+            if (dues == 'yes' || dues == 'Yes') {
+
+                let assignments = prompt("All assigments are submitted?");
+                if (assignments == 'yes' || assignments == "Yes"){
+
+                    let student_on_time=prompt("Are you  on time in exam center?");
+                    if(student_on_time == "yes" || student_on_time == "Yes"){
+
+                        alert("You can Appear in Exam");
+
+                    }else{
+                        alert("You can not appear in Exam because you are not on time");
+                    }
+                }else{
+                    alert("You can not appear in Exam because your have not submitted all your assigments");
+                }
+            }else {
+                alert("You can not appear in Exam because your dues are not clear");
+            }
+        }else {
+            alert(`You can not appear in Exam because of short attendence ${attendence_percentage} `);
+        }
+    </SCript>
+
+</body>
+
+</html>

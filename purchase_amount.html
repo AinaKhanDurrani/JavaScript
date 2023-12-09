@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <Script>
+        let purchase_amount = Number(prompt("Enter the Purchase amount"));
+        let discount = 0;
+        if (purchase_amount >= 50000) {
+            discount = .20 * purchase_amount;
+            
+        } else if (purchase_amount >= 40000) {
+            discount = .15  * purchase_amount;
+           
+        } else if (purchase_amount >= 30000) {
+            discount = .10 * purchase_amount;
+            
+        } else if (purchase_amount >= 20000) {
+            discount = .05  * purchase_amount;
+           
+        }else if (purchase_amount >= 10000) {
+            discount = .02 * purchase_amount;
+            
+        }else{
+            discount = 0 ;
+        }
+
+        alert(` 
+                 THANKS YOU FOR SHOPPING
+                __________________________
+
+                Your total bill is RS: ${purchase_amount}
+                Your discount is : ${discount}
+                Your finall bill is : ${purchase_amount-discount}`)
+    </Script>
+</body>
+
+</html>
