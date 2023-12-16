@@ -8,7 +8,10 @@
 <body>
 
     <a href="#" onclick="alert('you have clicked on me thanks!')"> Click Me</a> <br><br>
-    <a href="#" onclick="greetings()">Greet</a>
+    <a href="#" onclick="greetings()">Greet</a> <br><br>
+    <a href="#" onclick="greet_user('Aina Khan')">Greet User</a><br><br>
+    <a href="#" onclick=" var username='Aina Khan'; greet(username)">Greet Again</a><br><br>
+    <a href="#" onclick=" var username=prompt('Enter your name'); greet(username)">Greetings</a>
 
     <script src="events.js"></script>    
 </body>
