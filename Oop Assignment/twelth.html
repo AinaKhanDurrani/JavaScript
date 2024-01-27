@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class University {
+            constructor(universityName) {
+              this.universityName = universityName;
+              this.departments = [];
+            }
+          
+            addDepartment(departmentName) {
+              if (!this.departments.includes(departmentName)) {
+                this.departments.push(departmentName);
+                console.log(`Department "${departmentName}" added successfully.`);
+              } else {
+                console.log(`Department "${departmentName}" already exists.`);
+              }
+            }
+          
+            removeDepartment(departmentName) {
+              const index = this.departments.indexOf(departmentName);
+              if (index !== -1) {
+                this.departments.splice(index, 1);
+                console.log(`Department "${departmentName}" removed successfully.`);
+              } else {
+                console.log(`Department "${departmentName}" not found.`);
+              }
+            }
+          
+            displayDepartments() {
+              if (this.departments.length === 0) {
+                console.log(`No departments available for ${this.universityName}.`);
+              } else {
+                console.log(`Departments of ${this.universityName}:`);
+                this.departments.forEach((department, index) => {
+                  console.log(`${index + 1}. ${department}`);
+                });
+              }
+            }
+          }
+          
+          
+          const myUniversity = new University('My University');
+          
+ 
+          myUniversity.addDepartment('Computer Science');
+          myUniversity.addDepartment('Physics');
+          myUniversity.addDepartment('Mathematics');
+          myUniversity.displayDepartments();
+          
+          myUniversity.removeDepartment('Physics');
+          myUniversity.displayDepartments();
+          
+    </script>
+</body>
+</html>

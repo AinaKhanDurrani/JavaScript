@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Robo</h1>
+
+
+    <h3 id="working"></h3>
+
+    <h1>Laptop</h1>
+    <h3 id="info"></h3>
+
+
+    <script>
+class Robot{
+    constructor(name,dob,battery,domain,hands,legs){
+
+        this.name=name
+        this.dob=dob
+        this.battery=battery
+        this.domain=domain
+        this.hands=hands
+        this.legs=legs
+    }
+
+    operation()
+    {
+        document.getElementById('working').innerHTML=`${this.name} is operating the patient`
+    }
+
+    prescribing_medicine(){
+        document.getElementById('working').innerHTML=`${this.name} is prescribing medicine to patient`
+    }
+
+    introductuon(){
+        document.getElementById('working').innerHTML=`Name : ${this.name} 
+                                                      Battrey:${this.battery}
+                                                      Domain:${this.domain}
+                                                      Hands:${this.hands}
+                                                      Legs:${this.legs}`
+
+    }
+}
+robo= new Robot('mickyrobe','14 jan 2024','5000mah','health sector',3,2)
+
+robo.introductuon()
+
+class Laptop{
+    constructor(company,model,battery,ram,storage,color,price){
+
+        this.company=company
+        this.model=model
+        this.battery=battery
+        this.ram=ram
+        this.storage=storage
+        this.color=color
+        this.price=price
+    }
+
+    information(){
+        document.getElementById('info').innerHTML=`Company : ${this.company}  
+                                                    Moadel:${this.model}   
+                                                    Battery:${this.battery}
+                                                    RAM:${this.ram}   
+                                                    Storage:${this.storage}    
+                                                    Color:${this.color}   
+                                                    Price:${this.price}`   
+
+    }
+}
+
+mylaptop=new Laptop('Dell','Presion','10000 MAP','16GB','1TB','grey',120000)
+mylaptop.information()
+
+    </script>
+    
+</body>
+</html>

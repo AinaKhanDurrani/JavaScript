@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Bank {
+            constructor(bankName) {
+              this.bankName = bankName;
+              this.branches = [];
+            }
+          
+            addBranch(branchName) {
+              if (!this.branches.includes(branchName)) {
+                this.branches.push(branchName);
+                console.log(`Branch "${branchName}" added successfully.`);
+              } else {
+                console.log(`Branch "${branchName}" already exists.`);
+              }
+            }
+          
+            removeBranch(branchName) {
+              const index = this.branches.indexOf(branchName);
+              if (index !== -1) {
+                this.branches.splice(index, 1);
+                console.log(`Branch "${branchName}" removed successfully.`);
+              } else {
+                console.log(`Branch "${branchName}" not found.`);
+              }
+            }
+          
+            displayBranches() {
+              if (this.branches.length === 0) {
+                console.log(`No branches available for ${this.bankName}.`);
+              } else {
+                console.log(`Branches of ${this.bankName}:`);
+                this.branches.forEach((branch, index) => {
+                  console.log(`${index + 1}. ${branch}`);
+                });
+              }
+            }
+          }
+          
+          const myBank = new Bank('MyBank');
+          
+
+          myBank.addBranch('BranchA');
+          myBank.addBranch('BranchB');
+          myBank.addBranch('BranchC');
+          myBank.displayBranches();
+          
+          myBank.removeBranch('BranchB');
+          myBank.displayBranches();
+          
+    </script>
+</body>
+</html>

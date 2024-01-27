@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Program</title>
+</head>
+<body>
+
+    <script>
+        class Vehicle {
+            constructor(make, model, year) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+
+            displayDetails() {
+                console.log(`Make: ${this.make}, Model: ${this.model}, Year: ${this.year}`);
+            }
+        }
+
+        class Car extends Vehicle {
+            constructor(make, model, year, numDoors) {
+                super(make, model, year);
+                this.numDoors = numDoors;
+            }
+
+
+            displayDetails() {
+                super.displayDetails(); 
+                console.log(`Number of Doors: ${this.numDoors}`);
+            }
+        }
+
+         myVehicle = new Vehicle('Toyota', 'Camry', 2022);
+
+        myVehicle.displayDetails();
+
+        myCar = new Car('Ford', 'Mustang', 2021, 2);
+
+        myCar.displayDetails();
+    </script>
+</body>
+</html>

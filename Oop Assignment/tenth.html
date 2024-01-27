@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+class Product {
+    constructor(productId, name, price) {
+      this.productId = productId;
+      this.name = name;
+      this.price = price;
+    }
+  
+    
+    totalPrice(quantity) {
+      return this.price * quantity;
+    }
+  }
+  
+  
+  class PersonalCareProduct extends Product {
+    constructor(productId, name, price, warrantyPeriod) {
+      super(productId, name, price);
+      this.warrantyPeriod = warrantyPeriod;
+    }
+  
+    totalPrice(quantity) {
+      const basePrice = super.totalPrice(quantity);
+      const totalPriceWithWarranty = basePrice + this.warrantyPeriod * quantity;
+      return totalPriceWithWarranty;
+    }
+  }
+ 
+  const hairDryer = new PersonalCareProduct('123', 'Hair Dryer', 30, 2);
+  
+  
+  const totalPriceWithWarranty = hairDryer.totalPrice(3);
+  console.log(`Total price with warranty for 3 hair dryers: $${totalPriceWithWarranty}`);
+  
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Program</title>
+</head>
+<body>
+
+    <script>
+        class Book {
+          constructor(title, author,publication_year){
+            this.title = title;
+            this.publication_year = publication_year;
+            this.author=author
+          }
+
+          bookdetail(){
+            console.log(`Title: ${title}
+                         Author: ${author}
+                         Publication Year: ${publication_year}`)
+          }
+        }
+
+        class Ebook extends Book {
+            constructor(title, author, publication_year,price) {
+                super(title, author,publication_year);
+                this.price = price;
+            }
+
+            bookdetail(){
+                console.log(`Title: ${title}
+                             Author: ${author}
+                             Publication Year: ${publication_year}
+                             Price: ${price}`)
+              }
+        }
+
+        manager1 = new Manager('Ali', 100000, 'HR');
+        console.log(manager1.calculateAnnualSalary());
+
+        manager2 = new Manager('Ahmad', 120000, 'Finance');
+        console.log(manager2.calculateAnnualSalary());
+    </script>
+</body>
+</html>
