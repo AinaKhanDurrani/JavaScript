@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Program</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        class Bank {
+
+            constructor(bankName) {
+                this.bankName = bankName;
+                this.branches = [];
+
+
+            }
+            addBranch(branchName, code, city, email, manager) {
+                const branch = new Branches(branchName, code, city, email, manager)
+                if (!this.branchExist()) {
+                    this.branches.push(branch);
+                    console.log(`Branch "${branchName}" added successfully.`);
+                }
+                else {
+                    console.log(`Branch "${branchName}" already exist.`);
+                }
+
+            }
+            branchExist(branchName) {
+                return this.branches.some(branch => branch.name === branchName);
+            }
+
+            removeBranch(branchName) {
+                const branchIndex = this.branches.findIndex(branch => branch.name === branchName);
+
+                if (branchIndex !== -1) {
+                    this.branches.splice(branchIndex, 1);
+                    console.log(`Branch "${branchName}" removed successfully.`);
+                } else {
+                    console.log(`Branch "${branchName}" does not exist.`);
+                }
+            }
+
+
+
+            displayBranches() {
+
+                if (this.branches.length > 0) {
+                    for (let i = 0; i < this.branches.length; i++) {
+                        console.log(this.branches[i]);
+                    }
+                } else {
+                    console.log("No Branch is Present");
+                }
+            }
+
+        }
+
+        class Branches {
+            constructor(name, code, city, email, manager) {
+                this.name = name
+                this.code = code
+                this.city = city
+                this.email = email
+                this.manager = manager
+            }
+
+
+
+        }
+
+        bank1 = new Bank('My Bank');
+        bank1.addBranch('Branch1', '001', 'City1', 'email1@example.com', 'Manager1');
+        bank1.addBranch('Branch2', '002', 'City2', 'email2@example.com', 'Manager2');
+        bank1.addBranch('Branch3', '003', 'City3', 'email3@example.com', 'Manager3');
+        console.log("Before removing branches:");
+        bank1.displayBranches();
+
+        bank1.removeBranch('Branch1');
+        console.log("After removing branches:");
+        bank1.displayBranches();
+
+    </script>
+
+</body>
+
+</html>
